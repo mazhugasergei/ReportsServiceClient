@@ -1,7 +1,7 @@
-module.exports = Test;
+module.exports = Test
 
 function Test() {
-	it(`service test test`, (done)=> { 
-		done();
-	});
+	it(`service test test`, (done) => {
+		done()
+	})
 }
