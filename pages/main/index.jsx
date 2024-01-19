@@ -35,7 +35,7 @@ class WrappApp extends React.Component {
 	render() {
 		return (
 			<main className="min-h-screen flex justify-center p-8">
-				<Tabs defaultValue="sources" className="min-w-[38.5625rem] relative">
+				<Tabs defaultValue="sources" className="w-full max-w-[45rem] relative">
 					<TabsList>
 						<TabsTrigger value="sources">Ресурсы</TabsTrigger>
 						<TabsTrigger value="tasks">Логи</TabsTrigger>

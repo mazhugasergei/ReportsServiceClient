@@ -17,13 +17,13 @@ const Task = ({ name, link, status, created }) => {
 	}
 
 	return (
-		<div className="grid grid-cols-[1fr_1fr_auto_auto] items-center gap-4 border rounded-lg px-4 py-2">
+		<div className="grid grid-cols-[1fr_auto_1fr_auto_auto] items-center gap-4 border rounded-lg px-4 py-2">
 			<div className="font-medium">{name}</div>
-			<div>
-				{new Date(created)
-					.toLocaleDateString("en-US", { year: "numeric", month: "2-digit", day: "2-digit" })
-					.replace(/\//g, ".")}
-			</div>
+			<div>{new Date(created).toISOString().slice(0, 10).replace(/-/g, ".")}</div>
+			<ScrollArea className="flex-1 whitespace-nowrap border rounded-lg">
+				<div className="px-4 py-2">{link}</div>
+				<ScrollBar orientation="horizontal" />
+			</ScrollArea>
 			<div
 				className={`w-[5rem] grid place-items-center text-sm text-white rounded-md py-1 ${
 					status === "success" ? "bg-emerald-500" : status === "waiting" ? "bg-gray-500" : "bg-destructive"

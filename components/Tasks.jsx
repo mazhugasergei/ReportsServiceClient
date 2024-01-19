@@ -17,7 +17,8 @@ const Tasks = () => {
 
 	useEffect(() => {
 		getTasks()
-		setInterval(getTasks, 5000)
+		// const intervalId = setInterval(getTasks, 5000)
+		// return () => clearInterval(intervalId)
 	}, [])
 
 	return (
@@ -25,10 +26,12 @@ const Tasks = () => {
 			<Button onClick={getTasks} variant="outline" className="absolute top-0 right-0">
 				<ReloadIcon />
 			</Button>
+			{!tasks && "Loading..."}
+			{!tasks?.length && "Нет тасков"}
 			{tasks?.map((task) => {
 				const { _id, name, link, status, created } = task
 				return <Task {...{ name, link, status, created }} key={_id} />
-			}) || "Loading..."}
+			})}
 		</div>
 	)
 }
