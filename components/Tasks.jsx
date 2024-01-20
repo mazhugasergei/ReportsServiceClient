@@ -17,7 +17,7 @@ const Tasks = () => {
 
 	useEffect(() => {
 		getTasks()
-		// const intervalId = setInterval(getTasks, 5000)
+		// const intervalId = setInterval(getTasks, 1000)
 		// return () => clearInterval(intervalId)
 	}, [])
 
