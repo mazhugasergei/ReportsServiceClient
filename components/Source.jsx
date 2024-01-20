@@ -31,9 +31,9 @@ const Source = ({ self, _id, name, link, cron }) => {
 			auth: false,
 			params: { ...values }
 		})
-		toast({
-			description: "Сохранено"
-		})
+		// toast({
+		// 	description: "Сохранено"
+		// })
 		form.reset()
 		self.setState({ sources: [{ _id, ...values }, ...self.state.sources] })
 	}
@@ -44,7 +44,7 @@ const Source = ({ self, _id, name, link, cron }) => {
 			params: { _id, ...values }
 		})
 		toast({
-			description: "Сохранено"
+			description: "Изменения сохранены"
 		})
 	}
 	const onDelete = async () => {
@@ -52,9 +52,9 @@ const Source = ({ self, _id, name, link, cron }) => {
 			auth: false,
 			params: { _id }
 		})
-		toast({
-			description: "Удалено"
-		})
+		// toast({
+		// 	description: "Удалено"
+		// })
 		self.setState({ sources: [...self.state.sources.filter((source) => source._id !== _id)] })
 	}
 

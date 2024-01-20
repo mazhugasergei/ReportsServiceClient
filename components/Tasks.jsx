@@ -30,7 +30,7 @@ const Tasks = () => {
 			{!tasks?.length && "Нет тасков"}
 			{tasks?.map((task) => {
 				const { _id, name, link, status, created } = task
-				return <Task {...{ name, link, status, created }} key={_id} />
+				return <Task {...{ _id, name, link, status, created }} key={_id} />
 			})}
 		</div>
 	)
